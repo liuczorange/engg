@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/raw/*.csv
+data/processed/*
+outputs/figures/*
+outputs/metrics/*
+outputs/models/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/metrics/.gitkeep
+!outputs/models/.gitkeep
