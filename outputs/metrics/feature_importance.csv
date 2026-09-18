@@ -1,0 +1,32 @@
+feature,importance
+current_electricity,0.6377159
+rolling_mean_3h,0.31996414
+rolling_mean_24h,0.02311186
+rolling_mean_6h,0.004531616
+floor_area,0.0032241505
+hour_cos,0.0015496442
+lag_24,0.0015037213
+day_sin,0.0010332576
+primary_use_Education,0.00082998496
+lag_1,0.00082985207
+primary_use_Entertainment/public assembly,0.0007781525
+hour_sin,0.00073982315
+primary_use_Healthcare,0.0006622107
+hour,0.0006084252
+day_of_week,0.000606188
+rolling_std_24h,0.00039024942
+lag_3,0.0003656886
+primary_use_Office,0.0003265425
+lag_2,0.00027272428
+airTemperature,0.00018315128
+month,0.00013121215
+primary_use_Public services,0.00012903783
+primary_use_Warehouse/storage,0.00011580857
+dewTemperature,9.5752264e-05
+day_cos,9.1647715e-05
+seaLvlPressure,6.9983005e-05
+primary_use_Lodging/residential,5.515289e-05
+windDirection,4.509574e-05
+windSpeed,3.893103e-05
+primary_use_Manufacturing/industrial,0.0
+weekend,0.0

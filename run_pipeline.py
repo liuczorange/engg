@@ -24,6 +24,14 @@ from src.train_linear import train_linear_regression
 LOG = logging.getLogger("bdg2")
 
 
+def _portable_path(path: Path) -> str:
+    """Use repository-relative paths in manifests when possible."""
+    try:
+        return str(Path(path).resolve().relative_to(config.ROOT))
+    except ValueError:
+        return str(path)
+
+
 def _predictions(frame, linear, linear_columns, tree_model, tree_columns, tree_name):
     predictions = baseline_predictions(frame)
     # Electricity consumption cannot be negative; clipping is deterministic and uses no future data.
@@ -93,8 +101,8 @@ def run(raw_dir: Path, max_buildings: int, min_meter_coverage: float,
         "selected_buildings": len(buildings), "weather_features": weather_features,
         "feature_columns": linear_columns, "best_tree_parameters": best_params,
         "random_seed": config.RANDOM_SEED, "tree_model_backend": tree_backend,
-        "tree_model_path": str(tree_model_path),
-        "source_files": {key: str(value) for key, value in paths.items()},
+        "tree_model_path": _portable_path(tree_model_path),
+        "source_files": {key: _portable_path(value) for key, value in paths.items()},
     }
     (config.METRICS_DIR / "run_manifest.json").write_text(json.dumps(manifest, indent=2))
     LOG.info("Complete. Unseen-building results:\n%s", summary[summary.experiment == "unseen"].to_string(index=False))

@@ -1,0 +1,4 @@
+learning_rate,max_depth,n_estimators,min_child_weight,validation_mae
+0.05,3,250,2,5.884601650456422
+0.04,8,350,3,5.670139205338278
+0.08,6,200,4,5.565051686612196
